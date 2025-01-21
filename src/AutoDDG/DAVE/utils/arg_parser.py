@@ -7,7 +7,6 @@ def get_argparser():
     parser.add_argument(
         "--data_path", default=r"C:\projects\DAVE\FSC147_384_V2", type=str
     )
-    parser.add_argument("--model_path", default="scripts/weights/", type=str)
     parser.add_argument("--det_model_name", default="DAVE", type=str)
     parser.add_argument("--dataset", default="fsc147", type=str)
     parser.add_argument("--backbone", default="resnet18", type=str)
@@ -58,21 +57,10 @@ def get_argparser():
     parser.add_argument("--skip_cars", action="store_true")
     parser.add_argument("--skip_train", action="store_true")
     parser.add_argument("--skip_test", action="store_true")
+    parser.add_argument("--device", default="cuda", type=str)
+
     parser.add_argument(
-        "--datumaro_path",
-        default="/home/tomsg/Work/amnh/ddg/datasets/aerial_seabirds_west_africa/datumaro",
-        type=str,
+        "--config", default="./scripts/configs/DAVE_birds_few_shot_eval.json", type=str
     )
-    parser.add_argument(
-        "--datumaro_format",
-        default="datumaro",
-        type=str,
-    )
-    parser.add_argument(
-        "--reference_image_path",
-        default="/home/tomsg/Work/amnh/ddg/datasets/aerial_seabirds_west_africa/datumaro/images/train/3360_19200.jpg.jpg",
-        type=str,
-    )
-    parser.add_argument("--device", default="0", type=str)
 
     return parser

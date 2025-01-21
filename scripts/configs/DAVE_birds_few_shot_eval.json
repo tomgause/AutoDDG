@@ -1,0 +1,147 @@
+{
+    "type": "DAVE",
+    "save_annotated_images": true,
+    "model_name": "DAVE_3_shot",
+    "data_path": "C:\\projects\\DAVE\\FSC147_384_V2",
+    "det_model_name": "DAVE",
+    "dataset": "fsc147",
+    "backbone": "resnet50",
+    "swav_backbone": true,
+    "reduction": 8,
+    "image_size": 512,
+    "fcos_pred_size": 512,
+    "num_enc_layers": 3,
+    "num_dec_layers": 3,
+    "emb_dim": 256,
+    "num_heads": 8,
+    "kernel_dim": 3,
+    "epochs": 200,
+    "resume_training": false,
+    "lr": 0.0001,
+    "backbone_lr": 0,
+    "lr_drop": 200,
+    "weight_decay": 0.0001,
+    "batch_size": 1,
+    "dropout": 0.1,
+    "num_workers": 8,
+    "max_grad_norm": 0.1,
+    "aux_weight": 0.3,
+    "tiling_p": 0.5,
+    "detection_loss_weight": 0.01,
+    "num_objects": 3,
+    "task": "fscd147",
+    "d_s": 1.0,
+    "m_s": 0.0,
+    "i_thr": 0.55,
+    "d_t": 3,
+    "s_t": 0.008,
+    "norm_s": false,
+    "unseen": false,
+    "egv": 0.132,
+    "zero_shot": false,
+    "det_train": false,
+    "eval_multicat": false,
+    "prompt_shot": false,
+    "normalized_l2": false,
+    "count_loss_weight": 0,
+    "min_count_loss_weight": 0,
+    "pre_norm": true,
+    "use_query_pos_emb": true,
+    "use_objectness": true,
+    "use_appearance": true,
+    "orig_dmaps": false,
+    "skip_cars": false,
+    "skip_train": false,
+    "skip_test": false,
+    "device": "cuda",
+    "model_path": "weights",
+    "datumaro_path": "/home/tomsg/Work/amnh/ddg/datasets/aerial_seabirds_west_africa/datumaro",
+    "datumaro_format": "datumaro",
+    "ref_image_path": "/home/tomsg/Work/amnh/ddg/datasets/aerial_seabirds_west_africa/datumaro/images/train/3360_19200.jpg.jpg",
+    "ref_bounding_boxes": [
+        [
+            29.528638028638056,
+            52.69480519480521,
+            51.693140193140266,
+            85.08907758907753
+        ],
+        [
+            32.086080586080584,
+            119.18831168831167,
+            54.250582750582794,
+            141.35281385281382
+        ],
+        [
+            11.626540126540135,
+            172.0421245421245,
+            40.61088911088916,
+            192.50166500166495
+        ],
+        [
+            36.34848484848487,
+            276.8972693972694,
+            65.3328338328339,
+            291.38944388944384
+        ],
+        [
+            52.54562104562103,
+            366.4077589077589,
+            79.8250083250083,
+            386.01481851481844
+        ],
+        [
+            76.41508491508489,
+            411.58924408924406,
+            94.31718281718281,
+            436.3111888111888
+        ],
+        [
+            17.59390609390607,
+            451.65584415584414,
+            45.72577422577422,
+            471.26290376290376
+        ],
+        [
+            157.40076590076592,
+            461.88561438561436,
+            188.0900765900766,
+            480.6401931401931
+        ],
+        [
+            132.67882117882118,
+            355.32550782550777,
+            157.40076590076592,
+            380.8999333999334
+        ],
+        [
+            210.2545787545788,
+            279.4547119547119,
+            239.23892773892783,
+            302.47169497169494
+        ],
+        [
+            164.22061272061273,
+            212.96120546120545,
+            196.61488511488517,
+            233.4207459207459
+        ],
+        [
+            183.82767232767242,
+            133.68048618048613,
+            205.9921744921745,
+            164.36979686979686
+        ],
+        [
+            148.02347652347657,
+            62.07209457209456,
+            180.417748917749,
+            90.20396270396265
+        ],
+        [
+            136.0887445887446,
+            262.40509490509487,
+            163.36813186813185,
+            287.97952047952043
+        ]
+    ]
+}

@@ -13,3 +13,4 @@ wheels/
 *.log
 *visualizations
 *weights
+*jobs

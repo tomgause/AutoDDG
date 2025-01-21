@@ -1,5 +1,4 @@
 import math
-import os
 
 import numpy as np
 import skimage
@@ -9,7 +8,6 @@ from PIL import Image
 from scipy.sparse import csgraph
 from sklearn.cluster import SpectralClustering
 from torch import nn
-from torch.nn import DataParallel
 from torch.nn import functional as F
 from torchvision.ops import box_iou, roi_align
 
@@ -646,29 +644,6 @@ class COTR(nn.Module):
                 outputR[0][0] = mask_density(outputR[0], exemplar_bboxes)
 
         return outputR, [], tblr, exemplar_bboxes
-
-
-def build_eval(device, args):
-    torch.cuda.set_device(device)
-    device = torch.device(device)
-    model = DataParallel(
-        build_model(args).to(device), device_ids=[device], output_device=device
-    )
-    model.load_state_dict(
-        torch.load(os.path.join(args.model_path, "DAVE_3_shot.pth"))["model"],
-        strict=False,
-    )
-    pretrained_dict_feat = {
-        k.split("feat_comp.")[1]: v
-        for k, v in torch.load(os.path.join(args.model_path, "verification.pth"))[
-            "model"
-        ].items()
-        if "feat_comp" in k
-    }
-    model.module.feat_comp.load_state_dict(pretrained_dict_feat)
-    model.eval()
-
-    return model
 
 
 def build_model(args):
